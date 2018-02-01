@@ -41,4 +41,5 @@ RUN set -ex \
 ENTRYPOINT ["docker-php-entrypoint"]       
 
 EXPOSE 9000
-CMD ["php-fpm"] 
+EXPOSE 22
+CMD ["php-fpm"] && ["/usr/sbin/sshd", "-D"] 
